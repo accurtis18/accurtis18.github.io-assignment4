@@ -25,7 +25,7 @@ body{
 
 .q1answers{
     list-style: none;
-    margin-left: none;
+    display: inline;
 }
 
 .card {

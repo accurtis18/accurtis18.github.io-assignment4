@@ -1,23 +1,31 @@
+var score = localStorage.getItem("score");
+var timer = 90;
+
+
+$('.correct').on("click", function(){
+    score++;  
+    localStorage.setItem("score", score);
+    $('.prompt').html("Correct");
+});
+
+$('.incorrect').on("click", function(){
+    timer -= 4;
+});
+
+//Look up setInterval how to subtract from it
 function startTimer(){
-    var timer = 90;
     setInterval(function(){
         $('#timer').html(timer);
+        $('#timer').css("padding-bottom", "16px");
         if(--timer < 0){
             $('#timer').html("Times Up!");
         }
     }, 1000);
-
 }
-
-// window.onload = function () {
-//     display = document.querySelector('#timer');
-//     startTimer(display);
-// };
-
-
 
 $('#start').on("click", function(){
     startTimer();
     $('.startPage').hide();
     $('.question1').show();
-})
+});
+
