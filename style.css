@@ -1,0 +1,118 @@
+*{
+    font-family: "Open Sans", Helvetica, sans-serif; 
+}
+
+body{
+    padding-bottom: 60px;
+}
+
+/* .header{
+    padding: 30px 40px;
+    text-align: center;
+} */
+
+.codeTitle{
+    text-align: center;
+}
+
+.card {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px 40px;
+  }
+
+  .card-header{
+      background-color: hsl(0, 0%, 100%);
+      text-align: center;
+  }
+
+  .card-footer{
+    background-color: hsl(0, 0%, 100%);
+    text-align: center;
+}
+
+  #password {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    display: block;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 85px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #c0c7cf;
+    border-radius: 6px;
+    resize: none;
+    overflow: hidden;
+  }
+
+  .btn {
+    border: none;
+    background-color: hsl(300, 100%, 33%);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: hsl(0, 0%, 100%);
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  #generate:hover{
+      color: hsl(300, 82%, 70%);
+  }
+
+  button[disabled] {
+    cursor: default;
+    background: #c0c7cf;
+  }
+
+.myFooter{
+    -webkit-animation: cyclecolors linear;
+    -webkit-animation-duration: 90s;
+    -webkit-animation-iteration-count: infinite;
+    animation: cyclecolors;
+    animation-duration: 90s;
+    animation-iteration-count: infinite;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: white;
+    padding-top: 5px;
+    height: 50px;
+    background-color: hsl(300, 100%, 33%);
+}
+
+@keyframes cyclecolors{
+0% {
+    background-color: hsl(300, 100%, 33%);
+}
+16% {
+    background-color: hsl(212, 100%, 49%);
+}
+32% {
+    background-color: hsl(130, 100%, 33%);
+}
+48% {
+    background-color: #fdc345;
+}
+64% {
+    background-color: #f89438;
+}
+96% {
+    background-color: #e65453;
+}
+}
