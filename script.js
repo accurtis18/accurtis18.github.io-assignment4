@@ -1,15 +1,23 @@
-function startTimer(display){
+function startTimer(){
     var timer = 90;
     setInterval(function(){
-        display.textContent = timer;
+        $('#timer').html(timer);
         if(--timer < 0){
-            display.textContent = "Times Up!";
+            $('#timer').html("Times Up!");
         }
     }, 1000);
 
 }
 
-window.onload = function () {
-    display = document.querySelector('#timer');
-    startTimer(display);
-};
+// window.onload = function () {
+//     display = document.querySelector('#timer');
+//     startTimer(display);
+// };
+
+
+
+$('#start').on("click", function(){
+    startTimer();
+    $('.startPage').hide();
+    $('.question1').show();
+})
