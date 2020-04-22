@@ -11,8 +11,18 @@ body{
     text-align: center;
 } */
 
+
 .codeTitle{
     text-align: center;
+}
+
+#highScore{
+    padding-left: 100px
+}
+
+#timer{
+    text-align: right;
+    padding-right: 100px;
 }
 
 .startPage{
