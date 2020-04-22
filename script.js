@@ -1,8 +1,7 @@
 function startTimer(display){
-    var timer = 90, seconds;
+    var timer = 90;
     setInterval(function(){
         display.textContent = timer;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
         if(--timer < 0){
             display.textContent = "Times Up!";
         }
