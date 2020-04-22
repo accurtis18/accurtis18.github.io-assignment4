@@ -6,33 +6,27 @@ body{
     padding-bottom: 60px;
 }
 
-/* .header{
-    padding: 30px 40px;
-    text-align: center;
-} */
-
-
 .codeTitle{
     text-align: center;
 }
 
-#highScore{
+/* #highScore{
     padding-left: 100px
-}
+} */
 
 #timer{
     text-align: right;
-    padding-right: 100px;
-}
-
-.startPage{
-    display: inline;
+    /* padding-right: 100px; */
 }
 
 .question1{
     display: none;
 }
 
+.q1answers{
+    list-style: none;
+    margin-left: none;
+}
 
 .card {
     background-color: hsl(0, 0%, 100%);
