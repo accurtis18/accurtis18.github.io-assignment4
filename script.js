@@ -46,7 +46,7 @@ function recordScore(){
         </div>`);
 }
 
-$(document).on("click", '#submit', function(){
+function addHighScore(){
     var newScore = {
         score: score,
         user: $('#name').val()
@@ -55,10 +55,19 @@ $(document).on("click", '#submit', function(){
     highScores.sort((a,b) => b.score - a.score);
     highScores.splice(5); 
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    console.log(highScores);
     showHighScores();
+}
+
+$(document).on("click", '#submit', function(){
+    addHighScore();
 })
 
+$(document).keypress('#submit', function (e) {
+    if (e.which == 13) {
+        addHighScore();
+      return false;
+    }
+  });
 
 function setQuestion(){
     if(questionNumber === question.length){
