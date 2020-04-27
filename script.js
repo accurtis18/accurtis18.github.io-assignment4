@@ -1,4 +1,3 @@
-var score = 0;
 var time = 0;
 var setTimer = null;
 var questionNumber = 0;
@@ -35,7 +34,7 @@ function recordScore(){
     $('.question').hide();
     $(".scores").html("");
     $(".scores").show();
-    $(".scores").append(`<div class="col-md-12 inputScore"><h3> Your Score: ${score}</h3></div>
+    $(".scores").append(`<div class="col-md-12 inputScore"><h3> Your Score: ${time}</h3></div>
     <div class="row">
         <div class="col-md-12">
             <div class="input-group mb-3 yourScore">
@@ -49,7 +48,7 @@ function recordScore(){
 
 function addHighScore(){
     var newScore = {
-        score: score,
+        score: time,
         user: $('#name').val()
     }
     highScores.push(newScore);
@@ -102,8 +101,7 @@ function setQuestion(){
 }
 
 
-$(document).on("click", '.correct', function(){
-    score += 5;  
+$(document).on("click", '.correct', function(){ 
     footerNote = "Correct!"
     questionNumber += 1;
     setQuestion();
@@ -142,7 +140,6 @@ $('#start').on("click", function(){
     questionNumber = 0;
     startTimer();
     footerNote = "";
-    score = 0;
     $('.startPage').hide();
     $('.question').show();
     setQuestion();
