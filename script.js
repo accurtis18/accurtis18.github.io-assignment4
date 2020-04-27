@@ -13,7 +13,7 @@ function showHighScores(){
     $('.startPage').hide();
     $('.question').hide();
     $('.scores').hide();
-    $('.codeTitle').html('<h1>Highscores</h1>');
+    $('.codeTitle').html('<h1>High Scores</h1>');
     $('.highScores').show();
     $('.highScores').html("");
     highScores.sort((a,b) => b.score - a.score);
@@ -95,8 +95,8 @@ function setQuestion(){
         <button class="btn answer ${question[questionNumber].answer[rA3].correct}">${question[questionNumber].answer[rA3].text}</button>
         <button class="btn answer ${question[questionNumber].answer[rA4].correct}">${question[questionNumber].answer[rA4].text}</button>
         </div>
-        <div class="card-footer">
-        <p class="prompt">${footerNote}</p>
+        <div class="card-footer prompt questionFooter">
+        ${footerNote}
         </div>`);
     }
 }
@@ -138,7 +138,7 @@ function startTimer(){
 
 
 $('#start').on("click", function(){
-    time = 90;
+    time = 60;
     questionNumber = 0;
     startTimer();
     footerNote = "";
@@ -196,7 +196,7 @@ var question = [
         ]
     },
     {
-        question: "Give this arry var tigerKingCast = ['Carole Baskin', 'Joe Exotic', 'Doc Antle', 'Jeff Lowe']. What number would I put in the follow function to return 'Joe Exotic'? tigerKingCast[x]",
+        question: "Given this array var tigerKingCast = ['Carole Baskin', 'Joe Exotic', 'Doc Antle', 'Jeff Lowe']. What number would I put in the following code to return 'Joe Exotic'? tigerKingCast[x]",
         answer: [
             {text: '0', correct: 'incorrect'},
             {text: '1', correct: 'correct'},

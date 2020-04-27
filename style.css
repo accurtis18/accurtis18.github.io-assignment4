@@ -47,6 +47,10 @@ body{
     margin-top: 10px;
   }
 
+  .questionFooter{
+      height: 20px;
+  }
+
   .answers{
     display: grid;
     width: 75px;
