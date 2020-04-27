@@ -97,7 +97,7 @@ $(document).on("click", '.correct', function(){
 });
 
 $(document).on("click", '.incorrect', function(){
-    time -= 40;
+    time -= 10;
     footerNote = "Wrong!"
     questionNumber += 1;
     setQuestion();
@@ -134,6 +134,7 @@ $('#start').on("click", function(){
     setQuestion();
 });
 
+//This is the list of questions and answers in the form of an array
 var question = [
     {
         question: "Which of these is not a javascript primitave?",
@@ -161,5 +162,32 @@ var question = [
             {text: 'false', correct: 'incorrect'},
             {text: '-1', correct: 'correct'}
         ]
-    }
+    },
+    {
+        question: "How many columns does bootstrap divide a webpage into?",
+        answer: [
+            {text: '7', correct: 'incorrect'},
+            {text: '10', correct: 'incorrect'},
+            {text: '8', correct: 'incorrect'},
+            {text: '12', correct: 'correct'}
+        ]
+    },
+    {
+        question: "Which of these is used to show information in the console?",
+        answer: [
+            {text: 'print screen', correct: 'incorrect'},
+            {text: 'console.log()', correct: 'correct'},
+            {text: 'alert', correct: 'incorrect'},
+            {text: 'prompt', correct: 'incorrect'}
+        ]
+    },
+    {
+        question: "Give this arry var tigerKingCast = ['Carole Baskin', 'Joe Exotic', 'Doc Antle', 'Jeff Lowe']. What number would I put in the follow function to return 'Joe Exotic'? tigerKingCast[x]",
+        answer: [
+            {text: '0', correct: 'incorrect'},
+            {text: '1', correct: 'correct'},
+            {text: '2', correct: 'incorrect'},
+            {text: '3', correct: 'incorrect'}
+        ]
+    },
 ]
