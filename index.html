@@ -24,8 +24,8 @@
                         <h1>Coding Challenge</h1>
                     </div>
                 <div class="row">
-                    <div class="col-md-6" id="highScore">
-                        <p>View High Scores</p>
+                    <div class="col-md-6">
+                        <a id="highScore" href="#">View High Scores</a>
                     </div>
                     <div class="col-md-6" id="timer">
                         <p>Timer</p>
@@ -42,32 +42,21 @@
                       <h2>Start the Quiz!</h2>
                     </div>
                     <div class="card-body">
-                        Try to answer the following code-related questions within the time given. Keep in mind that a wrong answer will penalize your remaining time by 5 seconds!
+                        Try to answer the following code-related questions within the time given. Keep in mind that a wrong answer will penalize your remaining time by 10 seconds!
                     </div>
                     <div class="card-footer">
-                      <button id="start" class="btn">Start</button>
+                      <button id="start" class="btn start">Start</button>
                     </div>
                 </div>
             </section>
         </div>
 
-        <div class="row question1">
+        <div class="row question">
             <section class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                      <h2>Question 1</h2>
+                    <div class="card-header identifier">
                     </div>
-                    <div class="card-body">
-                        Which of these is not a javascript primitave?
-                        <ul class="q1answers">
-                            <li><button class="btn incorrect">boolean</button></li>
-                            <li><button class="btn incorrect">string</button></li>
-                            <li><button class="btn correct">character</button></li>
-                            <li><button class="btn incorrect">integer</button></li>
-                        </ul>
-                        <div class="card-footer">
-                            <p class="prompt"></p>
-                          </div>
+                    <div class="card-body questions">
                     </div>
                     <!-- <div class="card-footer">
                       <button id="generate" class="btn">Submit</button>
@@ -75,6 +64,8 @@
                 </div>
             </section>
         </div>
+        <div class="row scores"></div>
+        <div class="row highScores"></div>
     </div>
     </article>
 

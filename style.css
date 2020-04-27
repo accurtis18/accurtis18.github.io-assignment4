@@ -8,6 +8,7 @@ body{
 
 .codeTitle{
     text-align: center;
+    margin-top: 30px;
 }
 
 #timer{
@@ -19,13 +20,8 @@ body{
     }
 }
 
-.question1{
+.question{
     display: none;
-}
-
-.q1answers{
-    list-style: none;
-    display: inline;
 }
 
 .card {
@@ -47,53 +43,62 @@ body{
   .card-footer{
     background-color: hsl(0, 0%, 100%);
     text-align: center;
-}
-
-  #password {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    display: block;
-    width: 100%;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 85px;
-    font-size: 1.2rem;
-    text-align: center;
+    height: 75px;
     margin-top: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #c0c7cf;
-    border-radius: 6px;
-    resize: none;
-    overflow: hidden;
+  }
+
+
+
+
+  .answers{
+    display: grid;
+    width: 75px;
+    gap: 5px;
   }
 
   .btn {
-    border: none;
+    border: solid 2px hsl(300, 100%, 33%);
     background-color: hsl(300, 100%, 33%);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
       0px;
     color: hsl(0, 0%, 100%);
-    display: inline-block;
     font-size: 22px;
     line-height: 22px;
-    margin: 16px 16px 16px 20px;
     padding: 14px 34px;
     text-align: center;
     cursor: pointer;
   }
 
-  #generate:hover{
-      color: hsl(300, 82%, 70%);
+  .start {
+    margin: 16px 16px 16px 20px;
+  }
+
+  .answer {
+    padding: 5px 20px;
+  }
+
+  .submit{
+    font-size: 20px;
+    height: 38px;
+    padding: 7px 10px;
+  }
+
+  .btn:hover{
+      border: solid 2px;
+      border-color: black;
+      color: hsl(0, 0%, 100%);
   }
 
   button[disabled] {
     cursor: default;
     background: #c0c7cf;
   }
+
+  .yourScore{
+    margin: 0 auto;
+    width: 500px;
+}
 
 .myFooter{
     -webkit-animation: cyclecolors linear;
