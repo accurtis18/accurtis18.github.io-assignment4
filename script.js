@@ -13,6 +13,7 @@ function showHighScores(){
     $('.startPage').hide();
     $('.question').hide();
     $('.scores').hide();
+    $('.codeTitle').html('<h1>Highscores</h1>');
     $('.highScores').show();
     $('.highScores').html("");
     highScores.sort((a,b) => b.score - a.score);
@@ -73,14 +74,26 @@ function setQuestion(){
     if(questionNumber === question.length){
         recordScore();
         clearInterval(setTimer);
+        $('#timer').html(`Timer`);
     } else{
+        var randAnswer = [0,1,2,3];
+        var rA1 = randAnswer[Math.floor(Math.random() * 4)];
+        var arrayIndex = randAnswer.indexOf(rA1)
+        randAnswer.splice(arrayIndex, 1);
+        var rA2 = randAnswer[Math.floor(Math.random() * 3)];
+        arrayIndex = randAnswer.indexOf(rA2);
+        randAnswer.splice(arrayIndex, 1);
+        var rA3 = randAnswer[Math.floor(Math.random() * 2)];
+        arrayIndex = randAnswer.indexOf(rA3);
+        randAnswer.splice(arrayIndex, 1);
+        var rA4 = randAnswer[0];
         $('.identifier').html(`<h2>Question ${questionNumber + 1}</h2>`)
         $('.questions').html(`${question[questionNumber].question}
         <div class="answers">
-        <button class="btn answer ${question[questionNumber].answer[0].correct}">${question[questionNumber].answer[0].text}</button>
-        <button class="btn answer ${question[questionNumber].answer[1].correct}">${question[questionNumber].answer[1].text}</button>
-        <button class="btn answer ${question[questionNumber].answer[2].correct}">${question[questionNumber].answer[2].text}</button>
-        <button class="btn answer ${question[questionNumber].answer[3].correct}">${question[questionNumber].answer[3].text}</button>
+        <button class="btn answer ${question[questionNumber].answer[rA1].correct}">${question[questionNumber].answer[rA1].text}</button>
+        <button class="btn answer ${question[questionNumber].answer[rA2].correct}">${question[questionNumber].answer[rA2].text}</button>
+        <button class="btn answer ${question[questionNumber].answer[rA3].correct}">${question[questionNumber].answer[rA3].text}</button>
+        <button class="btn answer ${question[questionNumber].answer[rA4].correct}">${question[questionNumber].answer[rA4].text}</button>
         </div>
         <div class="card-footer">
         <p class="prompt">${footerNote}</p>
@@ -106,6 +119,7 @@ $(document).on("click", '.incorrect', function(){
 $(document).on("click", '.home', function(){
     $('.highScores').hide();
     $('.startPage').show();
+    $('.codeTitle').html('<h1>Coding Challenge</h1>');
     clearInterval(setTimer);
 });
 
