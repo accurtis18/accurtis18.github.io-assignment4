@@ -19,7 +19,7 @@
       <!-- Header -->
     <article>
         <div class="container">
-            <nav class="rowr">
+            <nav>
                     <div class="col-md-12 codeTitle">
                         <h1>Coding Challenge</h1>
                     </div>
@@ -35,38 +35,33 @@
         </div>
           <!-- Card Stile Layout and text area. -->
         <div class="container">    
-        <div class="row startPage">
-            <section class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                      <h2>Start the Quiz!</h2>
+            <div class="row startPage">
+                <section class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Start the Quiz!</h2>
+                        </div>
+                        <div class="card-body">
+                            Try to answer the following code-related questions within the time given. Keep in mind that a wrong answer will penalize your remaining time by 10 seconds!
+                        </div>
+                        <div class="card-footer">
+                            <button id="start" class="btn start">Start</button>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        Try to answer the following code-related questions within the time given. Keep in mind that a wrong answer will penalize your remaining time by 10 seconds!
-                    </div>
-                    <div class="card-footer">
-                      <button id="start" class="btn start">Start</button>
-                    </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
 
-        <div class="row question">
-            <section class="col-md-12">
-                <div class="card">
-                    <div class="card-header identifier">
+            <div class="row question">
+                <section class="col-md-12">
+                    <div class="card">
+                        <div class="card-header identifier"></div>
+                        <div class="card-body questions"></div>
                     </div>
-                    <div class="card-body questions">
-                    </div>
-                    <!-- <div class="card-footer">
-                      <button id="generate" class="btn">Submit</button>
-                    </div> -->
-                </div>
-            </section>
+                </section>
+            </div>
+            <div class="scores"></div>
+            <div class="highScores"></div>
         </div>
-        <div class="row scores"></div>
-        <div class="row highScores"></div>
-    </div>
     </article>
 
   <!-- Footer. -->

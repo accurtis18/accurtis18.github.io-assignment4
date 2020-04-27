@@ -47,9 +47,6 @@ body{
     margin-top: 10px;
   }
 
-
-
-
   .answers{
     display: grid;
     width: 75px;
@@ -95,9 +92,13 @@ body{
     background: #c0c7cf;
   }
 
+  .inputScore{
+    text-align: center;
+  }
+
   .yourScore{
     margin: 0 auto;
-    width: 500px;
+    max-width: 500px;
 }
 
 .myFooter{

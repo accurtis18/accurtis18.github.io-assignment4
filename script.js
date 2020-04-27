@@ -16,6 +16,7 @@ function showHighScores(){
     $('.highScores').show();
     $('.highScores').html("");
     highScores.sort((a,b) => b.score - a.score);
+    highScores.splice(5); 
     for(scores of highScores){
         $(".highScores").append(`<div class="input-group mb-3">
       </div>
@@ -35,7 +36,7 @@ function recordScore(){
     $('.question').hide();
     $(".scores").html("");
     $(".scores").show();
-    $(".scores").append(`<div class="col-md-12 inputScore"><div class"urScore"> Your Score: ${score}</div></div>
+    $(".scores").append(`<div class="col-md-12 inputScore"><h3> Your Score: ${score}</h3></div>
     <div class="row">
         <div class="col-md-12">
             <div class="input-group mb-3 yourScore">
@@ -53,6 +54,8 @@ $(document).on("click", '#submit', function(){
         user: $('#name').val()
     }
     highScores.push(newScore);
+    highScores.sort((a,b) => b.score - a.score);
+    highScores.splice(5); 
     localStorage.setItem("highScores", JSON.stringify(highScores));
     console.log(highScores);
     showHighScores();
@@ -96,6 +99,7 @@ $(document).on("click", '.incorrect', function(){
 $(document).on("click", '.home', function(){
     $('.highScores').hide();
     $('.startPage').show();
+    clearInterval(setTimer);
 });
 
 //Create function to change question number, incorrect and correct will call it
@@ -117,6 +121,7 @@ $('#start').on("click", function(){
     questionNumber = 0;
     startTimer();
     footerNote = "";
+    score = 0;
     $('.startPage').hide();
     $('.question').show();
     setQuestion();
