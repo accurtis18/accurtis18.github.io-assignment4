@@ -53,6 +53,18 @@ body{
     gap: 5px;
   }
 
+  .toHome{
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  #listItem{
+      max-width: 500px;
+      background-color: white;
+      margin: 0 auto;
+      margin-top: 5px;
+  }
+
   .btn {
     border: solid 2px hsl(300, 100%, 33%);
     background-color: hsl(300, 100%, 33%);
@@ -79,6 +91,10 @@ body{
     font-size: 20px;
     height: 38px;
     padding: 7px 10px;
+  }
+
+  .home{
+    padding: 5px 20px;
   }
 
   .btn:hover{

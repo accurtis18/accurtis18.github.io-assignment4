@@ -16,14 +16,12 @@ function showHighScores(){
     $('.highScores').show();
     $('.highScores').html("");
     highScores.sort((a,b) => b.score - a.score);
-    highScores.splice(5); 
     for(scores of highScores){
-        $(".highScores").append(`<div class="input-group mb-3">
-      </div>
+        $(".highScores").append(`<div class="col-md-12">
         <input type="text" class="form-control" id="listItem" value="${scores.user}: ${scores.score}" readonly>
-        </div>`)
+        </div></div>`)
     }
-    $(".highScores").append(`<div class="toHome">
+    $(".highScores").append(`<div class="col-md-12 toHome">
     <button class="btn home">Home</button>
     </div>`);
 }
