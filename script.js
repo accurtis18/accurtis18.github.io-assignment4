@@ -2,7 +2,7 @@ var time = 0;
 var setTimer = null;
 var questionNumber = 0;
 var footerNote = "";
-var localHighScore = localStorage.getItem("highScores");
+var localHighScore = localStorage.getItem("highScoresac");
 var highScores = [];
 if(localHighScore !== null && localHighScore !== ""){
     highScores = JSON.parse(localHighScore);
@@ -54,7 +54,7 @@ function addHighScore(){
     highScores.push(newScore);
     highScores.sort((a,b) => b.score - a.score);
     highScores.splice(5); 
-    localStorage.setItem("highScores", JSON.stringify(highScores));
+    localStorage.setItem("highScoresac", JSON.stringify(highScores));
     showHighScores();
 }
 
