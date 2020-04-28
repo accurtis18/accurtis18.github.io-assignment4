@@ -1,4 +1,5 @@
 var time = 0;
+//Setting global variables to be used across functions
 var setTimer = null;
 var questionNumber = 0;
 var footerNote = "";
@@ -8,6 +9,15 @@ if(localHighScore !== null && localHighScore !== ""){
     highScores = JSON.parse(localHighScore);
 } 
 
+//Home button returns back to start page from show High Scores page.
+$(document).on("click", '.home', function(){
+    $('.highScores').hide();
+    $('.startPage').show();
+    $('.codeTitle').html('<h1>Coding Challenge</h1>');
+    clearInterval(setTimer);
+});
+
+//Shows High scores, hides all other details, sorts the scores array from local stoarge.
 function showHighScores(){
     $('.startPage').hide();
     $('.question').hide();
@@ -26,10 +36,39 @@ function showHighScores(){
     </div>`);
 }
 
+//Allows text of High Scores to Show High Scores, calls show high scores function when clicked
 $('#highScore').on("click", function(){
     showHighScores();
 });
 
+//Add high score page, called from Submit button. Adds score to array, sorts array, then cuts so only five show, sets to local storage
+function addHighScore(){
+    var newScore = {
+        score: time,
+        user: $('#name').val()
+    }
+    highScores.push(newScore);
+    highScores.sort((a,b) => b.score - a.score);
+    highScores.splice(5); 
+    localStorage.setItem("highScoresac", JSON.stringify(highScores));
+    showHighScores();
+}
+
+//Enters high score on click
+$(document).on("click", '#submit', function(){
+    addHighScore();
+})
+
+//Allows high score to be entered with enter key
+$(document).keypress('#submit', function (e) {
+    if (e.which == 13) {
+        addHighScore();
+      return false;
+    }
+  });
+
+
+//Record Score page, called from setQuestion, give entery field and shows score, submit button.
 function recordScore(){
     $('.question').hide();
     $(".scores").html("");
@@ -46,29 +85,22 @@ function recordScore(){
         </div>`);
 }
 
-function addHighScore(){
-    var newScore = {
-        score: time,
-        user: $('#name').val()
-    }
-    highScores.push(newScore);
-    highScores.sort((a,b) => b.score - a.score);
-    highScores.splice(5); 
-    localStorage.setItem("highScoresac", JSON.stringify(highScores));
-    showHighScores();
-}
+//Correct button function, looks at class set on anser, sets footnote, advances question
+$(document).on("click", '.correct', function(){ 
+    footerNote = "Correct!"
+    questionNumber += 1;
+    setQuestion();
+});
 
-$(document).on("click", '#submit', function(){
-    addHighScore();
-})
+//Incorrect button function, looks at class set on answer, revokes 10 seconds from timer, sets footnote, advances question
+$(document).on("click", '.incorrect', function(){
+    time -= 10;
+    footerNote = "Wrong!"
+    questionNumber += 1;
+    setQuestion();
+});
 
-$(document).keypress('#submit', function (e) {
-    if (e.which == 13) {
-        addHighScore();
-      return false;
-    }
-  });
-
+//Sets question in to page, randomly orders responses, if no more questions, calls record time function
 function setQuestion(){
     if(questionNumber === question.length){
         recordScore();
@@ -100,27 +132,6 @@ function setQuestion(){
     }
 }
 
-
-$(document).on("click", '.correct', function(){ 
-    footerNote = "Correct!"
-    questionNumber += 1;
-    setQuestion();
-});
-
-$(document).on("click", '.incorrect', function(){
-    time -= 10;
-    footerNote = "Wrong!"
-    questionNumber += 1;
-    setQuestion();
-});
-
-$(document).on("click", '.home', function(){
-    $('.highScores').hide();
-    $('.startPage').show();
-    $('.codeTitle').html('<h1>Coding Challenge</h1>');
-    clearInterval(setTimer);
-});
-
 //Create function to change question number, incorrect and correct will call it
 function startTimer(){
     setTimer = setInterval(function(){
@@ -134,7 +145,7 @@ function startTimer(){
     }, 1000);
 }
 
-
+//Start button click, sets timer to 60, starts time, resets question progress, calls first question
 $('#start').on("click", function(){
     time = 60;
     questionNumber = 0;

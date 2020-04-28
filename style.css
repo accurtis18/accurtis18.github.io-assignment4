@@ -6,11 +6,13 @@ body{
     padding-bottom: 60px;
 }
 
+/* Setting format for start and questions card title */
 .codeTitle{
     text-align: center;
     margin-top: 30px;
 }
 
+/* formatting timer, including realigning to same side as high score on smaller screens */
 #timer{
     text-align: left;
 }
@@ -20,10 +22,12 @@ body{
     }
 }
 
+/* Setting questions card layout to not display on start */
 .question{
     display: none;
 }
 
+/* Card body formatting */
 .card {
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
@@ -35,11 +39,13 @@ body{
     padding: 30px 40px;
   }
 
+  /* Card Header for start and questions */
   .card-header{
       background-color: hsl(0, 0%, 100%);
       text-align: center;
   }
 
+/* Card footer layout */
   .card-footer{
     background-color: hsl(0, 0%, 100%);
     text-align: center;
@@ -47,21 +53,25 @@ body{
     margin-top: 10px;
   }
 
+  /* Adjust height for footer during questions */
   .questionFooter{
       height: 20px;
   }
 
+/* formatting answer section of card */
   .answers{
     display: grid;
     width: 75px;
     gap: 5px;
   }
 
+  /* formatting home button */
   .toHome{
     text-align: center;
     margin-top: 10px;
   }
 
+  /* formatting high scores list items */
   #listItem{
       max-width: 500px;
       background-color: white;
@@ -69,6 +79,7 @@ body{
       margin-top: 5px;
   }
 
+/* general formatting for all buttons */
   .btn {
     border: solid 2px hsl(300, 100%, 33%);
     background-color: hsl(300, 100%, 33%);
@@ -83,6 +94,7 @@ body{
     cursor: pointer;
   }
 
+/* button specific formats below */
   .start {
     margin: 16px 16px 16px 20px;
   }
@@ -112,6 +124,7 @@ body{
     background: #c0c7cf;
   }
 
+/* formating score page */
   .inputScore{
     text-align: center;
   }
@@ -121,6 +134,7 @@ body{
     max-width: 500px;
 }
 
+/* formatting footer */
 .myFooter{
     -webkit-animation: cyclecolors linear;
     -webkit-animation-duration: 90s;
