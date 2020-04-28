@@ -19,6 +19,7 @@ $(document).on("click", '.home', function(){
 
 //Shows High scores, hides all other details, sorts the scores array from local stoarge.
 function showHighScores(){
+    clearInterval(setTimer);
     $('.startPage').hide();
     $('.question').hide();
     $('.scores').hide();
